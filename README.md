@@ -4,6 +4,8 @@
 
 **评审入口：**[需求](docs/01-requirements.md) · [动态决策设计](docs/02-solution.md) · [实际评估与证据](docs/03-evaluation.md) · [AI 使用](docs/04-ai-usage.md) · [复盘](docs/05-retrospective.md)。
 
+**项目讲解与投递：**[选题思路、执行流程、技术和案例详解](docs/06-project-walkthrough.md) · [投递页补充说明与材料索引](SUBMISSION.md)。
+
 ## 安装
 
 要求 Python 3.9+、Git；开发环境为 Windows / Python 3.9.13。运行和测试均只用标准库，可编辑安装使用 setuptools 构建后端。
