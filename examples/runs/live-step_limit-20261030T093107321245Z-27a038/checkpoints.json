@@ -1,0 +1,54 @@
+[
+  {
+    "step": 4,
+    "next": [],
+    "model_calls": 1,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d444a-26e5-67fa-8004-91441608527b"
+  },
+  {
+    "step": 3,
+    "next": [
+      "stop"
+    ],
+    "model_calls": 1,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d444a-26e1-69bc-8003-81a5d4e92c98"
+  },
+  {
+    "step": 2,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 1,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d444a-26dd-6c76-8002-2db9be27b6a9"
+  },
+  {
+    "step": 1,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 1,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d444a-26db-62ca-8001-0bf4a47676e1"
+  },
+  {
+    "step": 0,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d444a-184d-6a13-8000-e9152150eaa4"
+  },
+  {
+    "step": -1,
+    "next": [
+      "__start__"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d444a-184b-62cf-bfff-4a87e6a56e12"
+  }
+]

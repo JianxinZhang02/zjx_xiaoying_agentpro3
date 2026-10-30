@@ -1,0 +1,135 @@
+[
+  {
+    "step": 13,
+    "next": [],
+    "model_calls": 4,
+    "tool_calls": 4,
+    "checkpoint_id": "1f1d4449-a22a-6057-800d-573de828da9d"
+  },
+  {
+    "step": 12,
+    "next": [
+      "finalize"
+    ],
+    "model_calls": 4,
+    "tool_calls": 4,
+    "checkpoint_id": "1f1d4449-a226-600d-800c-c532d36db343"
+  },
+  {
+    "step": 11,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 4,
+    "tool_calls": 4,
+    "checkpoint_id": "1f1d4449-a222-60f0-800b-082e7dac43e1"
+  },
+  {
+    "step": 10,
+    "next": [
+      "validate"
+    ],
+    "model_calls": 4,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4449-a21c-6cbc-800a-a8b0bf6c0da0"
+  },
+  {
+    "step": 9,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 3,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4449-a218-6d51-8009-389a539d37e8"
+  },
+  {
+    "step": 8,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 3,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4449-a217-6856-8008-79a3bbddbf86"
+  },
+  {
+    "step": 7,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 3,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4449-a213-61c1-8007-6a3dc0145b95"
+  },
+  {
+    "step": 6,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 2,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4449-a210-622f-8006-efa4e58a4916"
+  },
+  {
+    "step": 5,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 2,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4449-a20e-6cc9-8005-8cfe2cbb7b73"
+  },
+  {
+    "step": 4,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 2,
+    "tool_calls": 1,
+    "checkpoint_id": "1f1d4449-a20c-6252-8004-9c8417f7ba3a"
+  },
+  {
+    "step": 3,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 1,
+    "tool_calls": 1,
+    "checkpoint_id": "1f1d4449-a208-64c3-8003-4cd7ac2f425a"
+  },
+  {
+    "step": 2,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 1,
+    "tool_calls": 1,
+    "checkpoint_id": "1f1d4449-a203-630b-8002-5b18a64bcc00"
+  },
+  {
+    "step": 1,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 1,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4449-a200-6a15-8001-bb293f1ea8d1"
+  },
+  {
+    "step": 0,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4449-a1fd-6dc4-8000-ef2aaebb7002"
+  },
+  {
+    "step": -1,
+    "next": [
+      "__start__"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4449-a1fb-6385-bfff-b06258822d71"
+  }
+]

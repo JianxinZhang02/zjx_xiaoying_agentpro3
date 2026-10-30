@@ -1,0 +1,25 @@
+{
+  "status": "answered",
+  "answer": "按《费用报销管理办法 A》，员工应在费用发生之日起 30 天内提交报销申请。该办法未注明适用范围；《差旅报销材料清单》本身不规定提交期限，仅说明期限适用制度存在歧义时应向财务确认。",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "chunk_id": "C1",
+      "quote": "员工应在费用发生之日起 30 天内提交报销申请。"
+    },
+    {
+      "doc_id": "D03",
+      "chunk_id": "C2",
+      "quote": "材料清单不规定报销提交期限；期限适用制度存在歧义时应向财务确认。"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "clarification_question": "",
+  "reason": "检索到的唯一规定期限的制度为《费用报销管理办法 A》，已读取原文核实；材料清单明确不规定期限，无冲突。",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 4,
+    "tool_calls": 6
+  }
+}

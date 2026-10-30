@@ -1,0 +1,155 @@
+[
+  {
+    "step": 1,
+    "call_id": "mock_1_0",
+    "tool": "search_documents",
+    "arguments": {
+      "query": "远程办公规则",
+      "purpose": "离线脚本：检索"
+    },
+    "result_summary": {
+      "ok": true,
+      "hits": 4,
+      "doc_ids": [
+        "D05",
+        "D06",
+        "D08",
+        "D10"
+      ]
+    },
+    "next_model_step": 2,
+    "observation_delivered_to_next_model": true,
+    "next_actions": [
+      {
+        "call_id": "mock_2_0",
+        "name": "read_document",
+        "arguments": {
+          "doc_id": "D05",
+          "purpose": "离线脚本：读取原文"
+        },
+        "public_basis": "离线脚本：读取原文"
+      }
+    ],
+    "termination": null
+  },
+  {
+    "step": 2,
+    "call_id": "mock_2_0",
+    "tool": "read_document",
+    "arguments": {
+      "doc_id": "D05",
+      "purpose": "离线脚本：读取原文"
+    },
+    "result_summary": {
+      "ok": true,
+      "doc_id": "D05",
+      "chunk_ids": [
+        "C1"
+      ]
+    },
+    "next_model_step": 3,
+    "observation_delivered_to_next_model": true,
+    "next_actions": [
+      {
+        "call_id": "mock_3_0",
+        "name": "read_document",
+        "arguments": {
+          "doc_id": "D06",
+          "purpose": "离线脚本：读取原文"
+        },
+        "public_basis": "离线脚本：读取原文"
+      }
+    ],
+    "termination": null
+  },
+  {
+    "step": 3,
+    "call_id": "mock_3_0",
+    "tool": "read_document",
+    "arguments": {
+      "doc_id": "D06",
+      "purpose": "离线脚本：读取原文"
+    },
+    "result_summary": {
+      "ok": true,
+      "doc_id": "D06",
+      "chunk_ids": [
+        "C1",
+        "C2"
+      ]
+    },
+    "next_model_step": 4,
+    "observation_delivered_to_next_model": true,
+    "next_actions": [
+      {
+        "call_id": "mock_4_0",
+        "name": "finish_answer",
+        "arguments": {
+          "status": "answered",
+          "answer": "旧版规定每周最多远程办公 1 天。 本制度自 2026-10-01 起完整替代 D05《远程办公规则旧版》，适用于全体正式员工。 员工每周最多远程办公 2 天，需要事先获得直属主管批准。",
+          "citations": [
+            {
+              "doc_id": "D05",
+              "chunk_id": "C1",
+              "quote": "旧版规定每周最多远程办公 1 天。"
+            },
+            {
+              "doc_id": "D06",
+              "chunk_id": "C1",
+              "quote": "本制度自 2026-10-01 起完整替代 D05《远程办公规则旧版》，适用于全体正式员工。"
+            },
+            {
+              "doc_id": "D06",
+              "chunk_id": "C2",
+              "quote": "员工每周最多远程办公 2 天，需要事先获得直属主管批准。"
+            }
+          ],
+          "conflicts": [],
+          "gaps": [],
+          "clarification_question": "",
+          "reason": "离线脚本结束"
+        },
+        "public_basis": "离线脚本结束"
+      }
+    ],
+    "termination": null
+  },
+  {
+    "step": 4,
+    "call_id": "mock_4_0",
+    "tool": "finish_answer",
+    "arguments": {
+      "status": "answered",
+      "answer": "旧版规定每周最多远程办公 1 天。 本制度自 2026-10-01 起完整替代 D05《远程办公规则旧版》，适用于全体正式员工。 员工每周最多远程办公 2 天，需要事先获得直属主管批准。",
+      "citations": [
+        {
+          "doc_id": "D05",
+          "chunk_id": "C1",
+          "quote": "旧版规定每周最多远程办公 1 天。"
+        },
+        {
+          "doc_id": "D06",
+          "chunk_id": "C1",
+          "quote": "本制度自 2026-10-01 起完整替代 D05《远程办公规则旧版》，适用于全体正式员工。"
+        },
+        {
+          "doc_id": "D06",
+          "chunk_id": "C2",
+          "quote": "员工每周最多远程办公 2 天，需要事先获得直属主管批准。"
+        }
+      ],
+      "conflicts": [],
+      "gaps": [],
+      "clarification_question": "",
+      "reason": "离线脚本结束"
+    },
+    "result_summary": {
+      "ok": true,
+      "accepted": true
+    },
+    "next_model_step": null,
+    "observation_delivered_to_next_model": false,
+    "next_actions": [],
+    "termination": "model_finished"
+  }
+]

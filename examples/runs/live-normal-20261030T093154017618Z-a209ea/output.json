@@ -1,0 +1,20 @@
+{
+  "status": "answered",
+  "answer": "根据《年假申请规则》（适用于全体正式员工，版本日期 2026-07-01）：年假应至少提前 3 个工作日申请，经直属主管批准后生效。",
+  "citations": [
+    {
+      "doc_id": "D04",
+      "chunk_id": "C1",
+      "quote": "年假应至少提前 3 个工作日申请，经直属主管批准后生效。"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "clarification_question": "",
+  "reason": "检索到唯一直接相关的《年假申请规则》，原文明确提前时限与批准人，无冲突。",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 3,
+    "tool_calls": 4
+  }
+}

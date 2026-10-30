@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-30T09:31:54.212117+00:00",
+  "mode": "live",
+  "engine": "langgraph",
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "results": [
+    {
+      "case": "normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-normal-20261030T093154017618Z-a209ea"
+    }
+  ],
+  "semantic_review": "Not performed automatically"
+}

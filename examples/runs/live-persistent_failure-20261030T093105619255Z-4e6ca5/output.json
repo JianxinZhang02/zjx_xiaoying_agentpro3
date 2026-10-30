@@ -1,0 +1,16 @@
+{
+  "status": "incomplete",
+  "answer": "无法核实年假申请需提前多久。检索到一份《年假申请规则》（D04，版本日期 2026-07-01，适用范围：全体正式员工），但该文档原文读取连续三次失败（工具返回 injected_failure），因此不能确认其具体条款内容，也无法给出可引用的期限。请稍后重试或联系制度发布方确认。",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "《年假申请规则》（D04）原文读取持续失败，无法核实年假申请提前期限的具体条款"
+  ],
+  "clarification_question": "",
+  "reason": "唯一相关制度 D04 原文读取连续失败，仅有搜索片段，不能作为最终引用，故无法给出核实后的答案。",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 6,
+    "tool_calls": 7
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "timestamp": "2026-10-30T09:31:43.169893+00:00",
+  "mode": "live",
+  "engine": "langgraph",
+  "total": 14,
+  "passed": 12,
+  "failed": 2,
+  "results": [
+    {
+      "case": "normal",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 0
+      },
+      "passed": false,
+      "failures": [
+        "unexpected_status:incomplete",
+        "missing_citation:D04",
+        "missing_answer_term:3",
+        "missing_answer_term:主管",
+        "missing_evidence_term:3 个工作日"
+      ],
+      "run_dir": "examples/runs/live-normal-20261030T093028865192Z-a65a8e"
+    },
+    {
+      "case": "conflict",
+      "status": "needs_clarification",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 6
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-conflict-20261030T093037546698Z-1ba698"
+    },
+    {
+      "case": "outside",
+      "status": "insufficient_evidence",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-outside-20261030T093041883178Z-013f36"
+    },
+    {
+      "case": "paraphrase",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-paraphrase-20261030T093046468809Z-7c3afb"
+    },
+    {
+      "case": "context",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-context-20261030T093050967457Z-864e48"
+    },
+    {
+      "case": "transient_failure",
+      "status": "answered",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 7
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-transient_failure-20261030T093057626211Z-3a5aae"
+    },
+    {
+      "case": "persistent_failure",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 6,
+        "tool_calls": 7
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-persistent_failure-20261030T093105619255Z-4e6ca5"
+    },
+    {
+      "case": "step_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 2
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-step_limit-20261030T093107321245Z-27a038"
+    },
+    {
+      "case": "changed_content",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-changed_content-20261030T093111952553Z-602395"
+    },
+    {
+      "case": "single_policy",
+      "status": "answered",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 6
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-single_policy-20261030T093120118741Z-3fdcee"
+    },
+    {
+      "case": "explicit_supersession",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-explicit_supersession-20261030T093130735177Z-043cee"
+    },
+    {
+      "case": "document_injection",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-document_injection-20261030T093134816954Z-7714ef"
+    },
+    {
+      "case": "materials_normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 6
+      },
+      "passed": false,
+      "failures": [
+        "forbidden_answer_term:30 天",
+        "forbidden_answer_term:15 天"
+      ],
+      "run_dir": "examples/runs/live-materials_normal-20261030T093141269429Z-8f7794"
+    },
+    {
+      "case": "tool_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 1
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-tool_limit-20261030T093143040210Z-016dec"
+    }
+  ],
+  "semantic_review": "Not performed automatically"
+}

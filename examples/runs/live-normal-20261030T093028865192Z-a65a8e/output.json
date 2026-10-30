@@ -1,0 +1,16 @@
+{
+  "status": "incomplete",
+  "answer": "任务未完成：model_error:timeout",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "model_error:timeout"
+  ],
+  "clarification_question": "",
+  "reason": "model_error:timeout",
+  "termination_reason": "model_error:timeout",
+  "counts": {
+    "model_calls": 1,
+    "tool_calls": 0
+  }
+}

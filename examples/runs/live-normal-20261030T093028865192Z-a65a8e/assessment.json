@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "failures": [
+    "unexpected_status:incomplete",
+    "missing_citation:D04",
+    "missing_answer_term:3",
+    "missing_answer_term:主管",
+    "missing_evidence_term:3 个工作日"
+  ],
+  "boundary": "Rule checks plus exact-source validation; semantic support still requires human review."
+}

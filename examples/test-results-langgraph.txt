@@ -1,0 +1,52 @@
+Command: .venv/Scripts/python.exe -m unittest discover -s tests -v
+Source commit: c7364642f1ed833e8d69b96ec831f23ef3aa6b20
+
+test_empty_object_is_not_a_valid_history (test_agent.AgentTests.test_empty_object_is_not_a_valid_history) ... ok
+test_fabricated_quote_rejected (test_agent.AgentTests.test_fabricated_quote_rejected) ... ok
+test_finish_must_observe_results_first (test_agent.AgentTests.test_finish_must_observe_results_first) ... ok
+test_history_is_preserved_but_cannot_add_system_role (test_agent.AgentTests.test_history_is_preserved_but_cannot_add_system_role) ... ok
+test_invalid_envelope_stops_cleanly (test_agent.AgentTests.test_invalid_envelope_stops_cleanly) ... ok
+test_loop_returns_actual_observation_to_model (test_agent.AgentTests.test_loop_returns_actual_observation_to_model) ... ok
+test_malformed_tool_arguments_go_back_to_model (test_agent.AgentTests.test_malformed_tool_arguments_go_back_to_model) ... ok
+test_model_error_and_successful_evidence_are_preserved (test_agent.AgentTests.test_model_error_and_successful_evidence_are_preserved) ... ok
+test_multiple_calls_all_returned (test_agent.AgentTests.test_multiple_calls_all_returned) ... ok
+test_multiple_calls_counted_and_evidence_preserved_at_limit (test_agent.AgentTests.test_multiple_calls_counted_and_evidence_preserved_at_limit) ... ok
+test_nonobject_arguments_still_save_failure_trace (test_agent.AgentTests.test_nonobject_arguments_still_save_failure_trace) ... ok
+test_plain_text_cannot_finish_and_model_limit_is_explicit (test_agent.AgentTests.test_plain_text_cannot_finish_and_model_limit_is_explicit) ... ok
+test_schema_rejects_malformed_citations (test_agent.AgentTests.test_schema_rejects_malformed_citations) ... ok
+test_trace_runs_are_unique_and_reconstructable (test_agent.AgentTests.test_trace_runs_are_unique_and_reconstructable) ... ok
+test_transient_failure_observed_and_retried (test_agent.AgentTests.test_transient_failure_observed_and_retried) ... ok
+test_unknown_source_and_conflict_cannot_be_answered (test_agent.AgentTests.test_unknown_source_and_conflict_cannot_be_answered) ... ok
+test_unknown_tool_and_invalid_limits (test_agent.AgentTests.test_unknown_tool_and_invalid_limits) ... ok
+test_unread_citation_rejected_then_repaired (test_agent.AgentTests.test_unread_citation_rejected_then_repaired) ... ok
+test_all_offline_cases_without_network (test_evaluation.EvaluationTests.test_all_offline_cases_without_network) ... ok
+test_cli_exit_status_and_unknown_case (test_evaluation.EvaluationTests.test_cli_exit_status_and_unknown_case) ... ok
+test_evaluate_cli_passes_custom_data (test_evaluation.EvaluationTests.test_evaluate_cli_passes_custom_data) ... ok
+test_live_missing_key_is_saved_and_fails_assessment (test_evaluation.EvaluationTests.test_live_missing_key_is_saved_and_fails_assessment) ... ok
+test_assessment_rejects_missing_observation_link (test_langgraph.LangGraphTests.test_assessment_rejects_missing_observation_link) ... ok
+test_compiled_graph_and_state_own_task_data (test_langgraph.LangGraphTests.test_compiled_graph_and_state_own_task_data) ... ok
+test_graph_steps_and_model_budget_are_distinct (test_langgraph.LangGraphTests.test_graph_steps_and_model_budget_are_distinct) ... ok
+test_graph_trace_artifacts_are_actual_state (test_langgraph.LangGraphTests.test_graph_trace_artifacts_are_actual_state) ... ok
+test_new_task_cannot_reuse_old_evidence (test_langgraph.LangGraphTests.test_new_task_cannot_reuse_old_evidence) ... ok
+test_observation_precedes_new_model_decision (test_langgraph.LangGraphTests.test_observation_precedes_new_model_decision) ... ok
+test_recursion_guard_is_an_explicit_incomplete (test_langgraph.LangGraphTests.test_recursion_guard_is_an_explicit_incomplete) ... ok
+test_same_batch_action_is_not_reported_as_feedback_decision (test_langgraph.LangGraphTests.test_same_batch_action_is_not_reported_as_feedback_decision) ... ok
+test_config_repr_has_no_secret_and_http_rejected (test_model.ModelTests.test_config_repr_has_no_secret_and_http_rejected) ... ok
+test_http_error_redacts_key (test_model.ModelTests.test_http_error_redacts_key) ... ok
+test_malformed_response_is_explicit (test_model.ModelTests.test_malformed_response_is_explicit) ... ok
+test_missing_key_no_network (test_model.ModelTests.test_missing_key_no_network) ... ok
+test_response_discards_internal_reasoning_and_checks_payload (test_model.ModelTests.test_response_discards_internal_reasoning_and_checks_payload) ... ok
+test_timeout_is_explicit (test_model.ModelTests.test_timeout_is_explicit) ... ok
+test_changed_content_is_read_from_data (test_retrieval.RetrievalTests.test_changed_content_is_read_from_data) ... ok
+test_chinese_bigrams_and_latin (test_retrieval.RetrievalTests.test_chinese_bigrams_and_latin) ... ok
+test_conflict_both_recalled (test_retrieval.RetrievalTests.test_conflict_both_recalled) ... ok
+test_failure_preserves_success_and_retry (test_retrieval.RetrievalTests.test_failure_preserves_success_and_retry) ... ok
+test_invalid_inputs_are_errors (test_retrieval.RetrievalTests.test_invalid_inputs_are_errors) ... ok
+test_normal_and_paraphrase_recall (test_retrieval.RetrievalTests.test_normal_and_paraphrase_recall) ... ok
+test_outside_and_deterministic_order (test_retrieval.RetrievalTests.test_outside_and_deterministic_order) ... ok
+test_read_unknown_and_chunk (test_retrieval.RetrievalTests.test_read_unknown_and_chunk) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 3.795s
+
+OK

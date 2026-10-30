@@ -1,0 +1,30 @@
+{
+  "status": "answered",
+  "answer": "按现行制度，员工每周最多可远程办公 2 天，且需事先获得直属主管批准。旧版规定为每周最多 1 天，但现行版自 2026-10-01 起已完整替代旧版，两者适用范围均为全体正式员工，因此不存在并行冲突。",
+  "citations": [
+    {
+      "doc_id": "D06",
+      "chunk_id": "C2",
+      "quote": "员工每周最多远程办公 2 天，需要事先获得直属主管批准。"
+    },
+    {
+      "doc_id": "D06",
+      "chunk_id": "C1",
+      "quote": "本制度自 2026-10-01 起完整替代 D05《远程办公规则旧版》，适用于全体正式员工。"
+    },
+    {
+      "doc_id": "D05",
+      "chunk_id": "C1",
+      "quote": "旧版规定每周最多远程办公 1 天。"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "clarification_question": "",
+  "reason": "已读取新旧两份制度原文，现行版明确完整替代旧版且适用范围一致，天数事实清晰无冲突。",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 3,
+    "tool_calls": 5
+  }
+}

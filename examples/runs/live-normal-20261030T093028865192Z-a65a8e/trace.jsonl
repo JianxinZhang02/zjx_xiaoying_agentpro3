@@ -1,0 +1,5 @@
+{"event": "graph_node", "index": 1, "timestamp": "2026-10-30T09:29:28.372368+00:00", "node": "decide", "graph_step": 1}
+{"event": "model_call", "index": 2, "timestamp": "2026-10-30T09:29:28.372368+00:00", "step": 1, "observed_tool_call_ids": []}
+{"event": "model_error", "index": 3, "timestamp": "2026-10-30T09:30:28.863084+00:00", "code": "timeout", "message": "Model request timed out"}
+{"event": "graph_node", "index": 4, "timestamp": "2026-10-30T09:30:28.864118+00:00", "node": "stop", "graph_step": 2}
+{"event": "termination", "index": 5, "timestamp": "2026-10-30T09:30:28.864118+00:00", "status": "incomplete", "reason": "model_error:timeout", "counts": {"model_calls": 1, "tool_calls": 0}}

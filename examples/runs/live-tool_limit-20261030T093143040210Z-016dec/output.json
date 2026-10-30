@@ -1,0 +1,16 @@
+{
+  "status": "incomplete",
+  "answer": "任务未完成：tool_call_limit",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "tool_call_limit"
+  ],
+  "clarification_question": "",
+  "reason": "tool_call_limit",
+  "termination_reason": "tool_call_limit",
+  "counts": {
+    "model_calls": 1,
+    "tool_calls": 1
+  }
+}

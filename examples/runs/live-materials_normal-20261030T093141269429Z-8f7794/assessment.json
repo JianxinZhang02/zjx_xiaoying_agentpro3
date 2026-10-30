@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "failures": [
+    "forbidden_answer_term:30 天",
+    "forbidden_answer_term:15 天"
+  ],
+  "boundary": "Rule checks plus exact-source validation; semantic support still requires human review."
+}

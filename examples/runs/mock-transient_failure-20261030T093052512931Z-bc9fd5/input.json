@@ -1,0 +1,7 @@
+{
+  "id": "transient_failure",
+  "question": "国内差旅报销要准备哪些材料？",
+  "failures": {
+    "read_document": 1
+  }
+}

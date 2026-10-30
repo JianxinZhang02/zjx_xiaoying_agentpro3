@@ -1,0 +1,189 @@
+[
+  {
+    "step": 19,
+    "next": [],
+    "model_calls": 6,
+    "tool_calls": 7,
+    "checkpoint_id": "1f1d444a-16a7-6d82-8013-9c5f3e5b18a7"
+  },
+  {
+    "step": 18,
+    "next": [
+      "finalize"
+    ],
+    "model_calls": 6,
+    "tool_calls": 7,
+    "checkpoint_id": "1f1d444a-16a2-6102-8012-ed52f549a1a1"
+  },
+  {
+    "step": 17,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 6,
+    "tool_calls": 7,
+    "checkpoint_id": "1f1d444a-169f-67fd-8011-b71f3a944cc1"
+  },
+  {
+    "step": 16,
+    "next": [
+      "validate"
+    ],
+    "model_calls": 6,
+    "tool_calls": 6,
+    "checkpoint_id": "1f1d444a-169a-6676-8010-eaab9ace6068"
+  },
+  {
+    "step": 15,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 5,
+    "tool_calls": 6,
+    "checkpoint_id": "1f1d444a-01f8-6daf-800f-acdb2048ef9b"
+  },
+  {
+    "step": 14,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 5,
+    "tool_calls": 6,
+    "checkpoint_id": "1f1d444a-01f6-6519-800e-30efad0db200"
+  },
+  {
+    "step": 13,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 5,
+    "tool_calls": 5,
+    "checkpoint_id": "1f1d444a-01f0-6886-800d-3087413ae8c9"
+  },
+  {
+    "step": 12,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 4,
+    "tool_calls": 5,
+    "checkpoint_id": "1f1d4449-f79b-63c9-800c-000af8fec640"
+  },
+  {
+    "step": 11,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 4,
+    "tool_calls": 5,
+    "checkpoint_id": "1f1d4449-f795-6433-800b-8b1ad39af3fe"
+  },
+  {
+    "step": 10,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 4,
+    "tool_calls": 4,
+    "checkpoint_id": "1f1d4449-f78e-688a-800a-1451d3dae50a"
+  },
+  {
+    "step": 9,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 3,
+    "tool_calls": 4,
+    "checkpoint_id": "1f1d4449-eccd-6b2c-8009-64ce5f74e246"
+  },
+  {
+    "step": 8,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 3,
+    "tool_calls": 4,
+    "checkpoint_id": "1f1d4449-eccb-61db-8008-8e7d463b2ea9"
+  },
+  {
+    "step": 7,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 3,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4449-ecc8-690d-8007-600c2d15674d"
+  },
+  {
+    "step": 6,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 2,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4449-e220-6775-8006-29a3b53f2286"
+  },
+  {
+    "step": 5,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 2,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4449-e220-6774-8005-edfce3b04c4c"
+  },
+  {
+    "step": 4,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 2,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4449-e21c-69d5-8004-ab77aeeed2ac"
+  },
+  {
+    "step": 3,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 1,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4449-d900-6697-8003-b4c4d6e69534"
+  },
+  {
+    "step": 2,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 1,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4449-d8fd-6cf2-8002-de3e276db463"
+  },
+  {
+    "step": 1,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 1,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4449-d8f9-6653-8001-342fbbff8d6c"
+  },
+  {
+    "step": 0,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4449-cc99-6fc1-8000-eaf6d050d9df"
+  },
+  {
+    "step": -1,
+    "next": [
+      "__start__"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4449-cc97-66f9-bfff-5f88aa916303"
+  }
+]
