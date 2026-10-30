@@ -1,5 +1,5 @@
 Command: python -m unittest discover -s tests -v
-Source commit: 8d3eb2ed9b0f3106bda091afefa265e500866a65
+Source commit: 7a86d58cc9c8adc676ff4e78941057ba9bd0e822
 
 test_empty_object_is_not_a_valid_history (test_agent.AgentTests) ... ok
 test_fabricated_quote_rejected (test_agent.AgentTests) ... ok
@@ -39,6 +39,6 @@ test_outside_and_deterministic_order (test_retrieval.RetrievalTests) ... ok
 test_read_unknown_and_chunk (test_retrieval.RetrievalTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 36 tests in 1.702s
+Ran 36 tests in 1.675s
 
 OK

@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "failures": [],
+  "boundary": "Rule checks plus exact-source validation; semantic support still requires human review."
+}

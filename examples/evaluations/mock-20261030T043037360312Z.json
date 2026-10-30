@@ -1,0 +1,142 @@
+{
+  "timestamp": "2026-10-30T04:30:37.360312+00:00",
+  "mode": "mock",
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "case": "normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-normal-20261030T043036324473Z-763bb6"
+    },
+    {
+      "case": "conflict",
+      "status": "needs_clarification",
+      "counts": {
+        "model_calls": 5,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-conflict-20261030T043036409595Z-36f86c"
+    },
+    {
+      "case": "outside",
+      "status": "insufficient_evidence",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-outside-20261030T043036492239Z-9d2151"
+    },
+    {
+      "case": "paraphrase",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-paraphrase-20261030T043036581770Z-a652f1"
+    },
+    {
+      "case": "context",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-context-20261030T043036664058Z-227e50"
+    },
+    {
+      "case": "transient_failure",
+      "status": "answered",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-transient_failure-20261030T043036748956Z-069b4f"
+    },
+    {
+      "case": "persistent_failure",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-persistent_failure-20261030T043036827570Z-7e2e26"
+    },
+    {
+      "case": "step_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 1
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-step_limit-20261030T043036909721Z-6ef215"
+    },
+    {
+      "case": "changed_content",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-changed_content-20261030T043036994688Z-64950e"
+    },
+    {
+      "case": "single_policy",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-single_policy-20261030T043037090845Z-a1965e"
+    },
+    {
+      "case": "explicit_supersession",
+      "status": "answered",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-explicit_supersession-20261030T043037180422Z-3c7641"
+    },
+    {
+      "case": "document_injection",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-document_injection-20261030T043037271781Z-db5cbd"
+    }
+  ],
+  "semantic_review": "Not performed automatically"
+}

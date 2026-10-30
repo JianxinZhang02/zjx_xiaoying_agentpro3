@@ -1,0 +1,98 @@
+Independent remote clone + clean venv verification
+Time: 2026-10-30T12:33:52.621244+08:00
+Clone commit: 7a86d58cc9c8adc676ff4e78941057ba9bd0e822
+API key variables and PYTHONPATH removed from child environment.
+
+COMMAND: "F:\zjx study\zjx_xiaoying_agent\.local\reviewenv\Scripts\python.exe" -c "import sys, knowledge_agent, importlib.metadata; print('Python:',sys.version); print('Module:',knowledge_agent.__file__); print('Isolated venv:',sys.prefix != sys.base_prefix); print('setuptools:',importlib.metadata.version('setuptools'))"
+Expected exit: 0
+Actual exit: 0
+Python: 3.9.13 (main, Aug 25 2022, 23:51:50) [MSC v.1916 64 bit (AMD64)]
+Module: F:\zjx study\zjx_xiaoying_agent\.local\review-checkout\src\knowledge_agent\__init__.py
+Isolated venv: True
+setuptools: 58.1.0
+
+COMMAND: "F:\zjx study\zjx_xiaoying_agent\.local\reviewenv\Scripts\python.exe" -m unittest discover -s tests -v
+Expected exit: 0
+Actual exit: 0
+test_empty_object_is_not_a_valid_history (test_agent.AgentTests) ... ok
+test_fabricated_quote_rejected (test_agent.AgentTests) ... ok
+test_finish_must_observe_results_first (test_agent.AgentTests) ... ok
+test_history_is_preserved_but_cannot_add_system_role (test_agent.AgentTests) ... ok
+test_invalid_envelope_stops_cleanly (test_agent.AgentTests) ... ok
+test_loop_returns_actual_observation_to_model (test_agent.AgentTests) ... ok
+test_malformed_tool_arguments_go_back_to_model (test_agent.AgentTests) ... ok
+test_model_error_and_successful_evidence_are_preserved (test_agent.AgentTests) ... ok
+test_multiple_calls_all_returned (test_agent.AgentTests) ... ok
+test_multiple_calls_counted_and_evidence_preserved_at_limit (test_agent.AgentTests) ... ok
+test_nonobject_arguments_still_save_failure_trace (test_agent.AgentTests) ... ok
+test_plain_text_cannot_finish_and_model_limit_is_explicit (test_agent.AgentTests) ... ok
+test_schema_rejects_malformed_citations (test_agent.AgentTests) ... ok
+test_trace_runs_are_unique_and_reconstructable (test_agent.AgentTests) ... ok
+test_transient_failure_observed_and_retried (test_agent.AgentTests) ... ok
+test_unknown_source_and_conflict_cannot_be_answered (test_agent.AgentTests) ... ok
+test_unknown_tool_and_invalid_limits (test_agent.AgentTests) ... ok
+test_unread_citation_rejected_then_repaired (test_agent.AgentTests) ... ok
+test_all_offline_cases_without_network (test_evaluation.EvaluationTests) ... ok
+test_cli_exit_status_and_unknown_case (test_evaluation.EvaluationTests) ... ok
+test_evaluate_cli_passes_custom_data (test_evaluation.EvaluationTests) ... ok
+test_live_missing_key_is_saved_and_fails_assessment (test_evaluation.EvaluationTests) ... ok
+test_config_repr_has_no_secret_and_http_rejected (test_model.ModelTests) ... ok
+test_http_error_redacts_key (test_model.ModelTests) ... ok
+test_malformed_response_is_explicit (test_model.ModelTests) ... ok
+test_missing_key_no_network (test_model.ModelTests) ... ok
+test_response_discards_internal_reasoning_and_checks_payload (test_model.ModelTests) ... ok
+test_timeout_is_explicit (test_model.ModelTests) ... ok
+test_changed_content_is_read_from_data (test_retrieval.RetrievalTests) ... ok
+test_chinese_bigrams_and_latin (test_retrieval.RetrievalTests) ... ok
+test_conflict_both_recalled (test_retrieval.RetrievalTests) ... ok
+test_failure_preserves_success_and_retry (test_retrieval.RetrievalTests) ... ok
+test_invalid_inputs_are_errors (test_retrieval.RetrievalTests) ... ok
+test_normal_and_paraphrase_recall (test_retrieval.RetrievalTests) ... ok
+test_outside_and_deterministic_order (test_retrieval.RetrievalTests) ... ok
+test_read_unknown_and_chunk (test_retrieval.RetrievalTests) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 1.722s
+
+OK
+
+COMMAND: "F:\zjx study\zjx_xiaoying_agent\.local\reviewenv\Scripts\python.exe" -m knowledge_agent evaluate --mode mock --out-dir .local/verification-runs
+Expected exit: 0
+Actual exit: 0
+{"case": "normal", "status": "answered", "counts": {"model_calls": 3, "tool_calls": 3}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-normal-20261030T043354907473Z-fb42fe"}
+{"case": "conflict", "status": "needs_clarification", "counts": {"model_calls": 5, "tool_calls": 5}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-conflict-20261030T043354999235Z-ee8cff"}
+{"case": "outside", "status": "insufficient_evidence", "counts": {"model_calls": 3, "tool_calls": 3}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-outside-20261030T043355083466Z-adbee5"}
+{"case": "paraphrase", "status": "answered", "counts": {"model_calls": 3, "tool_calls": 3}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-paraphrase-20261030T043355192666Z-54c05f"}
+{"case": "context", "status": "answered", "counts": {"model_calls": 3, "tool_calls": 3}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-context-20261030T043355281964Z-1ba78f"}
+{"case": "transient_failure", "status": "answered", "counts": {"model_calls": 4, "tool_calls": 4}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-transient_failure-20261030T043355371211Z-bc687f"}
+{"case": "persistent_failure", "status": "incomplete", "counts": {"model_calls": 3, "tool_calls": 3}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-persistent_failure-20261030T043355455983Z-848e66"}
+{"case": "step_limit", "status": "incomplete", "counts": {"model_calls": 1, "tool_calls": 1}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-step_limit-20261030T043355541879Z-90d534"}
+{"case": "changed_content", "status": "answered", "counts": {"model_calls": 3, "tool_calls": 3}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-changed_content-20261030T043355625852Z-e5af6b"}
+{"case": "single_policy", "status": "answered", "counts": {"model_calls": 3, "tool_calls": 3}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-single_policy-20261030T043355738655Z-130c51"}
+{"case": "explicit_supersession", "status": "answered", "counts": {"model_calls": 4, "tool_calls": 4}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-explicit_supersession-20261030T043355827139Z-42f518"}
+{"case": "document_injection", "status": "answered", "counts": {"model_calls": 3, "tool_calls": 3}, "passed": true, "failures": [], "run_dir": ".local/verification-runs/mock-document_injection-20261030T043355910859Z-e045c2"}
+{"summary": "F:\\zjx study\\zjx_xiaoying_agent\\.local\\review-checkout\\examples\\evaluations\\mock-20261030T043355994918Z.json", "passed": 12, "total": 12}
+
+COMMAND: "F:\zjx study\zjx_xiaoying_agent\.local\reviewenv\Scripts\python.exe" -m knowledge_agent ask --question outside-question --mode mock --out-dir .local/verification-runs
+Expected exit: 2
+Actual exit: 2
+{
+  "mode": "mock",
+  "output": {
+    "status": "insufficient_evidence",
+    "answer": "当前企业制度不包含该问题的可靠答案。",
+    "citations": [],
+    "conflicts": [],
+    "gaps": [
+      "缺少相关资料"
+    ],
+    "clarification_question": "",
+    "reason": "离线脚本结束",
+    "termination_reason": "model_finished",
+    "counts": {
+      "model_calls": 3,
+      "tool_calls": 3
+    }
+  },
+  "run_dir": ".local\\verification-runs\\mock-ask-20261030T043356167163Z-fd5fe3"
+}

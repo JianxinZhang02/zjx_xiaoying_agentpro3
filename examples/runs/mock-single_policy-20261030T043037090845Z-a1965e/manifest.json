@@ -1,0 +1,17 @@
+{
+  "run_id": "mock-single_policy-20261030T043037090845Z-a1965e",
+  "timestamp": "2026-10-30T04:30:37.091846+00:00",
+  "display_timezone": "Asia/Shanghai",
+  "mode": "mock",
+  "requested_model": "SCRIPTED-OFFLINE-NOT-AN-LLM",
+  "limits": {
+    "model_calls": 8,
+    "tool_calls": 10
+  },
+  "data_sha256": "239c475f18854b9f82eab96150ac56e6121705407d54aabb7cddcf1222726d8b",
+  "prompt_sha256": "7fb22e3310eac84872ecba25c436bed63df61fa7047a66387ba2ec64e141fbd1",
+  "git_commit": "7a86d58cc9c8adc676ff4e78941057ba9bd0e822",
+  "source_dirty": false,
+  "source_sha256": "208d57f1077126c23d7414ea6dc3a016965ee7762840f68620b8f8bdfdf8f38b",
+  "mock_boundary": "Scripted model validates execution only, not real model decisions"
+}

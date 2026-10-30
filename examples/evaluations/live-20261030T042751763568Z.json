@@ -1,0 +1,142 @@
+{
+  "timestamp": "2026-10-30T04:27:51.763568+00:00",
+  "mode": "live",
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "case": "normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-normal-20261030T042650718907Z-86b32a"
+    },
+    {
+      "case": "conflict",
+      "status": "needs_clarification",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 6
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-conflict-20261030T042658023102Z-db244b"
+    },
+    {
+      "case": "outside",
+      "status": "insufficient_evidence",
+      "counts": {
+        "model_calls": 2,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-outside-20261030T042700874588Z-0dde60"
+    },
+    {
+      "case": "paraphrase",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-paraphrase-20261030T042705591623Z-ea9268"
+    },
+    {
+      "case": "context",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 6
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-context-20261030T042710617656Z-adcc59"
+    },
+    {
+      "case": "transient_failure",
+      "status": "answered",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 7
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-transient_failure-20261030T042717021187Z-d2c069"
+    },
+    {
+      "case": "persistent_failure",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 6,
+        "tool_calls": 7
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-persistent_failure-20261030T042725623269Z-7eb039"
+    },
+    {
+      "case": "step_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 2
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-step_limit-20261030T042727092916Z-3fda9c"
+    },
+    {
+      "case": "changed_content",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-changed_content-20261030T042731556796Z-289b21"
+    },
+    {
+      "case": "single_policy",
+      "status": "answered",
+      "counts": {
+        "model_calls": 5,
+        "tool_calls": 7
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-single_policy-20261030T042741399630Z-c67248"
+    },
+    {
+      "case": "explicit_supersession",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-explicit_supersession-20261030T042747227466Z-8a46e5"
+    },
+    {
+      "case": "document_injection",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-document_injection-20261030T042751615455Z-dba930"
+    }
+  ],
+  "semantic_review": "Not performed automatically"
+}

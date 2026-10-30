@@ -7,7 +7,7 @@ from pathlib import Path
 
 def main():
     names = subprocess.check_output(["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"]).decode().split("\0")
-    pattern = re.compile(rb"sk-(?:ws-)?[A-Za-z0-9._-]{20,}")
+    pattern = re.compile(rb"(?<![A-Za-z0-9_])sk-(?:ws-)?[A-Za-z0-9._-]{20,}")
     hits = []
     for name in names:
         if name and Path(name).is_file() and pattern.search(Path(name).read_bytes()):
