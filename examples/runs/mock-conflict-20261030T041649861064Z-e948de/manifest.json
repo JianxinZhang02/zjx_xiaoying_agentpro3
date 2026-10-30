@@ -1,0 +1,17 @@
+{
+  "run_id": "mock-conflict-20261030T041649861064Z-e948de",
+  "timestamp": "2026-10-30T04:16:49.861586+00:00",
+  "display_timezone": "Asia/Shanghai",
+  "mode": "mock",
+  "requested_model": "SCRIPTED-OFFLINE-NOT-AN-LLM",
+  "limits": {
+    "model_calls": 8,
+    "tool_calls": 10
+  },
+  "data_sha256": "a75e091fc6d4d57ddd56febcd895eaad28f962426700e9a2a89ce60b53f63639",
+  "prompt_sha256": "6383446e54301dcd76402cbde1c1d4bc49d56b8f06013816a986cf443ce308df",
+  "git_commit": "bf7a7864c0d321ad7dd238d22948355c84524768",
+  "source_dirty": true,
+  "source_sha256": "f0571204c0f5e437d58d46f7cf71e382a9e3b9fa727f51ff08ed5fba4a43ec58",
+  "mock_boundary": "Scripted model validates execution only, not real model decisions"
+}

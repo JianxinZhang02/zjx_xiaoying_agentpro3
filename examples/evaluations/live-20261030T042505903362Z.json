@@ -1,0 +1,146 @@
+{
+  "timestamp": "2026-10-30T04:25:05.902838+00:00",
+  "mode": "live",
+  "total": 12,
+  "passed": 10,
+  "failed": 2,
+  "results": [
+    {
+      "case": "normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-normal-20261030T042331075769Z-65d9d7"
+    },
+    {
+      "case": "conflict",
+      "status": "needs_clarification",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 6
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-conflict-20261030T042338782397Z-eacc7c"
+    },
+    {
+      "case": "outside",
+      "status": "insufficient_evidence",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-outside-20261030T042344342999Z-a018fe"
+    },
+    {
+      "case": "paraphrase",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-paraphrase-20261030T042350025844Z-6549cc"
+    },
+    {
+      "case": "context",
+      "status": "needs_clarification",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 7
+      },
+      "passed": false,
+      "failures": [
+        "unexpected_status:needs_clarification"
+      ],
+      "run_dir": "examples/runs/live-context-20261030T042401121262Z-101d21"
+    },
+    {
+      "case": "transient_failure",
+      "status": "needs_clarification",
+      "counts": {
+        "model_calls": 5,
+        "tool_calls": 9
+      },
+      "passed": false,
+      "failures": [
+        "unexpected_status:needs_clarification"
+      ],
+      "run_dir": "examples/runs/live-transient_failure-20261030T042417065508Z-0e0854"
+    },
+    {
+      "case": "persistent_failure",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 7,
+        "tool_calls": 9
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-persistent_failure-20261030T042429060331Z-0ec913"
+    },
+    {
+      "case": "step_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 2
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-step_limit-20261030T042430579428Z-343703"
+    },
+    {
+      "case": "changed_content",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-changed_content-20261030T042437251833Z-0c7704"
+    },
+    {
+      "case": "single_policy",
+      "status": "answered",
+      "counts": {
+        "model_calls": 5,
+        "tool_calls": 8
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-single_policy-20261030T042450274022Z-02e8a2"
+    },
+    {
+      "case": "explicit_supersession",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-explicit_supersession-20261030T042500450422Z-faf876"
+    },
+    {
+      "case": "document_injection",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-document_injection-20261030T042505758792Z-573124"
+    }
+  ],
+  "semantic_review": "Not performed automatically"
+}

@@ -1,0 +1,44 @@
+Command: python -m unittest discover -s tests -v
+Source commit: 8d3eb2ed9b0f3106bda091afefa265e500866a65
+
+test_empty_object_is_not_a_valid_history (test_agent.AgentTests) ... ok
+test_fabricated_quote_rejected (test_agent.AgentTests) ... ok
+test_finish_must_observe_results_first (test_agent.AgentTests) ... ok
+test_history_is_preserved_but_cannot_add_system_role (test_agent.AgentTests) ... ok
+test_invalid_envelope_stops_cleanly (test_agent.AgentTests) ... ok
+test_loop_returns_actual_observation_to_model (test_agent.AgentTests) ... ok
+test_malformed_tool_arguments_go_back_to_model (test_agent.AgentTests) ... ok
+test_model_error_and_successful_evidence_are_preserved (test_agent.AgentTests) ... ok
+test_multiple_calls_all_returned (test_agent.AgentTests) ... ok
+test_multiple_calls_counted_and_evidence_preserved_at_limit (test_agent.AgentTests) ... ok
+test_nonobject_arguments_still_save_failure_trace (test_agent.AgentTests) ... ok
+test_plain_text_cannot_finish_and_model_limit_is_explicit (test_agent.AgentTests) ... ok
+test_schema_rejects_malformed_citations (test_agent.AgentTests) ... ok
+test_trace_runs_are_unique_and_reconstructable (test_agent.AgentTests) ... ok
+test_transient_failure_observed_and_retried (test_agent.AgentTests) ... ok
+test_unknown_source_and_conflict_cannot_be_answered (test_agent.AgentTests) ... ok
+test_unknown_tool_and_invalid_limits (test_agent.AgentTests) ... ok
+test_unread_citation_rejected_then_repaired (test_agent.AgentTests) ... ok
+test_all_offline_cases_without_network (test_evaluation.EvaluationTests) ... ok
+test_cli_exit_status_and_unknown_case (test_evaluation.EvaluationTests) ... ok
+test_evaluate_cli_passes_custom_data (test_evaluation.EvaluationTests) ... ok
+test_live_missing_key_is_saved_and_fails_assessment (test_evaluation.EvaluationTests) ... ok
+test_config_repr_has_no_secret_and_http_rejected (test_model.ModelTests) ... ok
+test_http_error_redacts_key (test_model.ModelTests) ... ok
+test_malformed_response_is_explicit (test_model.ModelTests) ... ok
+test_missing_key_no_network (test_model.ModelTests) ... ok
+test_response_discards_internal_reasoning_and_checks_payload (test_model.ModelTests) ... ok
+test_timeout_is_explicit (test_model.ModelTests) ... ok
+test_changed_content_is_read_from_data (test_retrieval.RetrievalTests) ... ok
+test_chinese_bigrams_and_latin (test_retrieval.RetrievalTests) ... ok
+test_conflict_both_recalled (test_retrieval.RetrievalTests) ... ok
+test_failure_preserves_success_and_retry (test_retrieval.RetrievalTests) ... ok
+test_invalid_inputs_are_errors (test_retrieval.RetrievalTests) ... ok
+test_normal_and_paraphrase_recall (test_retrieval.RetrievalTests) ... ok
+test_outside_and_deterministic_order (test_retrieval.RetrievalTests) ... ok
+test_read_unknown_and_chunk (test_retrieval.RetrievalTests) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 1.702s
+
+OK

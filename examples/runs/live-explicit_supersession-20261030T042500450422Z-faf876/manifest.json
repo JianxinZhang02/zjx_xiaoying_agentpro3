@@ -1,0 +1,17 @@
+{
+  "run_id": "live-explicit_supersession-20261030T042500450422Z-faf876",
+  "timestamp": "2026-10-30T04:25:00.450925+00:00",
+  "display_timezone": "Asia/Shanghai",
+  "mode": "live",
+  "requested_model": "deepseek-v4.1-flash-1017",
+  "limits": {
+    "model_calls": 8,
+    "tool_calls": 10
+  },
+  "data_sha256": "a75e091fc6d4d57ddd56febcd895eaad28f962426700e9a2a89ce60b53f63639",
+  "prompt_sha256": "6383446e54301dcd76402cbde1c1d4bc49d56b8f06013816a986cf443ce308df",
+  "git_commit": "3e4969e01d2a5ca8371844ac38b9fbe8aab2f2ee",
+  "source_dirty": false,
+  "source_sha256": "0e4b887bc7896a275d40a97fbe4994d501ac7667555c53e56051939977f177bc",
+  "mock_boundary": null
+}

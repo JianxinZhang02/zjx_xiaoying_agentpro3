@@ -1,0 +1,16 @@
+{
+  "status": "incomplete",
+  "answer": "原文读取工具持续失败，任务未完成。",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "未能成功读取原文"
+  ],
+  "clarification_question": "",
+  "reason": "离线脚本结束",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 3,
+    "tool_calls": 3
+  }
+}

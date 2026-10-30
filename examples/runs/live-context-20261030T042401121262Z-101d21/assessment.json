@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "failures": [
+    "unexpected_status:needs_clarification"
+  ],
+  "boundary": "Rule checks plus exact-source validation; semantic support still requires human review."
+}

@@ -1,0 +1,16 @@
+{
+  "status": "insufficient_evidence",
+  "answer": "企业制度库中没有关于火星地下海洋含盐量的资料。该问题属于行星科学事实，不属于本知识库（费用报销、差旅、远程办公等企业管理制度）的覆盖范围，因此无法依据制度给出答案。建议查阅相关科研文献或权威科学机构发布的数据。",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "制度库中不存在火星地下海洋含盐量或相关行星科学数据的内容，检索无结果"
+  ],
+  "clarification_question": "",
+  "reason": "多轮检索均未命中相关制度，现有制度仅涉及报销、差旅、远程办公等企业事务，无该科学事实的证据。",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 3,
+    "tool_calls": 5
+  }
+}

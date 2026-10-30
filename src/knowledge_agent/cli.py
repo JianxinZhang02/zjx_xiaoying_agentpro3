@@ -15,6 +15,10 @@ from .trace import save_run
 
 
 def main(argv=None):
+    # Keep Chinese output portable in Windows terminals and redirected logs.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="企业制度知识问答 Agent（合成资料）")
     sub = parser.add_subparsers(dest="command", required=True)
     for name in ("ask", "run-case", "evaluate"):
