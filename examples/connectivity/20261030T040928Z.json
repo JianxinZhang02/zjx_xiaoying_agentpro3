@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-30T04:09:27.793926+00:00",
+  "mode": "live",
+  "requested_model": "deepseek-v4-flash",
+  "passed": false,
+  "error": {
+    "code": "http_403",
+    "message": "{\"error\":{\"message\":\"Workspace endpoint access denied.\",\"id\":\"9355a529-c22b-931c-a2f9-1a38a72eca52\",\"type\":\"access_denied\",\"code\":\"access_denied\"}}"
+  }
+}
