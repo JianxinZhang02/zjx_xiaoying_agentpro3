@@ -22,4 +22,3 @@
 默认最多 8 次模型调用、10 次工具调用、单次请求超时 60 秒；达到上限明确未完成。
 最终状态为 answered、needs_clarification、insufficient_evidence 或 incomplete。
 版本日期不自动构成制度优先级。Mock 只证明流程，不证明真实模型效果。
-

@@ -17,4 +17,3 @@ class ModelConfig:
             model=os.environ.get("DASHSCOPE_MODEL", cls.model),
             api_key=os.environ.get("DASHSCOPE_API_KEY", ""),
         )
-

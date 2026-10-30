@@ -14,4 +14,3 @@ knowledge-agent = "knowledge_agent.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

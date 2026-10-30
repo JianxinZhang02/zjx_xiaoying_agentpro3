@@ -11,4 +11,3 @@ Python 标准库实现的企业制度问答 CLI，提供真实模型工具循环
 python -m pip install -e .
 python scripts/check_model.py
 ```
-

@@ -1,4 +1,3 @@
 """Enterprise knowledge agent. Runtime uses the Python standard library only."""
 
 __version__ = "0.1.0"
-

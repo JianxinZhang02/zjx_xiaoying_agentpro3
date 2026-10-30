@@ -60,4 +60,3 @@ class LiveModel:
                     "finish_reason": data["choices"][0].get("finish_reason")}
         except (KeyError, IndexError, TypeError, ValueError):
             raise ModelError("invalid_response", "Missing valid choices[0].message") from None
-

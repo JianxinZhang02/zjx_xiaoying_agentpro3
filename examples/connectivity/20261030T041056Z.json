@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-30T04:10:56.165916+00:00",
+  "mode": "live",
+  "requested_model": "deepseek-v4-flash",
+  "passed": false,
+  "error": {
+    "code": "http_404",
+    "message": "{\"error\":{\"message\":\"Model not exist.\",\"id\":\"cda97733-a47e-958c-a3d2-d4c3993a2101\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}"
+  }
+}
