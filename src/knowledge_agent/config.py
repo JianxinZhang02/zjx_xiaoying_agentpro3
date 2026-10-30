@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 @dataclass
 class ModelConfig:
     base_url: str = "https://ws-5u8f5tyzlwat3b13.cn-beijing.maas.aliyuncs.com/compatible-mode/v1"
-    model: str = "deepseek-v4-flash"
+    model: str = "deepseek-v4.1-flash-1017"
     api_key: str = field(default="", repr=False)
     timeout: float = 60.0
 
