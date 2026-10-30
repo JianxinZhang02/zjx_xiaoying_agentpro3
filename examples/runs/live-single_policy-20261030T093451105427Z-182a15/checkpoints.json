@@ -1,0 +1,162 @@
+[
+  {
+    "step": 16,
+    "next": [],
+    "model_calls": 5,
+    "tool_calls": 9,
+    "checkpoint_id": "1f1d4452-7d0d-6ec5-8010-b6aeb7e68d8d"
+  },
+  {
+    "step": 15,
+    "next": [
+      "finalize"
+    ],
+    "model_calls": 5,
+    "tool_calls": 9,
+    "checkpoint_id": "1f1d4452-7d06-6066-800f-d38610eedfa9"
+  },
+  {
+    "step": 14,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 5,
+    "tool_calls": 9,
+    "checkpoint_id": "1f1d4452-7cfe-6863-800e-fe6ee0b20f23"
+  },
+  {
+    "step": 13,
+    "next": [
+      "validate"
+    ],
+    "model_calls": 5,
+    "tool_calls": 8,
+    "checkpoint_id": "1f1d4452-7cf9-6292-800d-b58de39e2551"
+  },
+  {
+    "step": 12,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 4,
+    "tool_calls": 8,
+    "checkpoint_id": "1f1d4452-6775-61e9-800c-b2b77fa1617c"
+  },
+  {
+    "step": 11,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 4,
+    "tool_calls": 8,
+    "checkpoint_id": "1f1d4452-6772-68c0-800b-fdec90ecd213"
+  },
+  {
+    "step": 10,
+    "next": [
+      "validate"
+    ],
+    "model_calls": 4,
+    "tool_calls": 7,
+    "checkpoint_id": "1f1d4452-676d-66f0-800a-d742dbd16a97"
+  },
+  {
+    "step": 9,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 3,
+    "tool_calls": 7,
+    "checkpoint_id": "1f1d4452-51fd-63a4-8009-f4ca5ed21c50"
+  },
+  {
+    "step": 8,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 3,
+    "tool_calls": 7,
+    "checkpoint_id": "1f1d4452-51fa-6a8c-8008-4e55bd7183df"
+  },
+  {
+    "step": 7,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 3,
+    "tool_calls": 5,
+    "checkpoint_id": "1f1d4452-51f5-688c-8007-03d768e45fca"
+  },
+  {
+    "step": 6,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 2,
+    "tool_calls": 5,
+    "checkpoint_id": "1f1d4452-4579-6bd6-8006-932454d35b83"
+  },
+  {
+    "step": 5,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 2,
+    "tool_calls": 5,
+    "checkpoint_id": "1f1d4452-4575-6bc8-8005-3bc78c9e408a"
+  },
+  {
+    "step": 4,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 2,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4452-456f-66a5-8004-f27496e927b9"
+  },
+  {
+    "step": 3,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 1,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4452-3365-6127-8003-c243407a990a"
+  },
+  {
+    "step": 2,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 1,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4452-3362-681d-8002-1bc1c3334674"
+  },
+  {
+    "step": 1,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 1,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4452-335e-6a6c-8001-8dfea8d9ec00"
+  },
+  {
+    "step": 0,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4452-25ee-60d3-8000-b691440616d9"
+  },
+  {
+    "step": -1,
+    "next": [
+      "__start__"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4452-25eb-66e6-bfff-1f348e434c04"
+  }
+]

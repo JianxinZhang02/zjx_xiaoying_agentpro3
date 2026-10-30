@@ -1,0 +1,29 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	decide(decide)
+	execute_tools(execute_tools)
+	observe(observe)
+	validate(validate)
+	finalize(finalize)
+	stop(stop)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> decide;
+	decide -.-> execute_tools;
+	decide -.-> stop;
+	decide -.-> validate;
+	execute_tools --> observe;
+	observe -.-> decide;
+	observe -.-> finalize;
+	observe -.-> stop;
+	validate --> observe;
+	finalize --> __end__;
+	stop --> __end__;
+	decide -.-> decide;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

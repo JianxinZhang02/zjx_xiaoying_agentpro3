@@ -1,0 +1,29 @@
+[
+  {
+    "step": 1,
+    "call_id": "call_d4c0d0c3102e45faaa695d67",
+    "tool": "search_documents",
+    "arguments": {
+      "query": "年假申请规则",
+      "purpose": "查找年假申请相关制度",
+      "top_k": 10
+    },
+    "result_summary": {
+      "ok": true,
+      "hits": 7,
+      "doc_ids": [
+        "D04",
+        "D05",
+        "D06",
+        "D08",
+        "D10",
+        "D02",
+        "D01"
+      ]
+    },
+    "next_model_step": null,
+    "observation_delivered_to_next_model": false,
+    "next_actions": [],
+    "termination": "tool_call_limit"
+  }
+]

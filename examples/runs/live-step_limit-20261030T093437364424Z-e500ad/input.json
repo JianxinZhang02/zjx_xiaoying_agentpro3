@@ -1,0 +1,8 @@
+{
+  "id": "step_limit",
+  "question": "请查证年假申请规则。",
+  "limits": {
+    "model_calls": 1,
+    "tool_calls": 10
+  }
+}

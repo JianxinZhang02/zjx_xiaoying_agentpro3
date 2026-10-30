@@ -1,0 +1,108 @@
+[
+  {
+    "step": 10,
+    "next": [],
+    "model_calls": 3,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4454-3bda-6419-800a-5fabafb1f21d"
+  },
+  {
+    "step": 9,
+    "next": [
+      "finalize"
+    ],
+    "model_calls": 3,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4454-3bd5-65fe-8009-6c47e40c601d"
+  },
+  {
+    "step": 8,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 3,
+    "tool_calls": 3,
+    "checkpoint_id": "1f1d4454-3bd2-6eeb-8008-bb2ed7b9b9c4"
+  },
+  {
+    "step": 7,
+    "next": [
+      "validate"
+    ],
+    "model_calls": 3,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4454-3bd0-67d7-8007-fe604c0e127e"
+  },
+  {
+    "step": 6,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 2,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4454-3bcd-6f45-8006-2eb89378bb12"
+  },
+  {
+    "step": 5,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 2,
+    "tool_calls": 2,
+    "checkpoint_id": "1f1d4454-3bcb-682c-8005-b73c3183eb1e"
+  },
+  {
+    "step": 4,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 2,
+    "tool_calls": 1,
+    "checkpoint_id": "1f1d4454-3bc9-6131-8004-03a3a950d718"
+  },
+  {
+    "step": 3,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 1,
+    "tool_calls": 1,
+    "checkpoint_id": "1f1d4454-3bc6-69cb-8003-c45aba5cb8ed"
+  },
+  {
+    "step": 2,
+    "next": [
+      "observe"
+    ],
+    "model_calls": 1,
+    "tool_calls": 1,
+    "checkpoint_id": "1f1d4454-3bc5-6015-8002-b48a8449b4c0"
+  },
+  {
+    "step": 1,
+    "next": [
+      "execute_tools"
+    ],
+    "model_calls": 1,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4454-3bc0-6204-8001-bb31e928ccaf"
+  },
+  {
+    "step": 0,
+    "next": [
+      "decide"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4454-3bbd-6ade-8000-f82fbbfc8593"
+  },
+  {
+    "step": -1,
+    "next": [
+      "__start__"
+    ],
+    "model_calls": 0,
+    "tool_calls": 0,
+    "checkpoint_id": "1f1d4454-3bbb-63d6-bfff-71b5d5af8b1e"
+  }
+]

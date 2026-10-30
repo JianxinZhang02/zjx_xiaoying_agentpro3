@@ -1,0 +1,16 @@
+{
+  "status": "insufficient_evidence",
+  "answer": "现有制度库中没有关于火星地下海洋含盐量的任何记载，无法回答该问题。该问题属于行星科学事实，不在企业制度范围内。",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "制度库中未检索到任何与火星地下海洋含盐量相关的文档，缺少可依据的资料。"
+  ],
+  "clarification_question": "",
+  "reason": "多次检索（含关键词改写）均无相关结果，制度库仅含报销、差旅、远程办公等企业制度，无该科学事实依据。",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 3,
+    "tool_calls": 5
+  }
+}

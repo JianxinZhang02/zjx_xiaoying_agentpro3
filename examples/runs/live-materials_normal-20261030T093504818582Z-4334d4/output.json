@@ -1,0 +1,20 @@
+{
+  "status": "answered",
+  "answer": "国内差旅报销需准备三项材料：合规发票、行程单和出差审批单。",
+  "citations": [
+    {
+      "doc_id": "D03",
+      "chunk_id": "C1",
+      "quote": "国内差旅报销需要提供合规发票、行程单和出差审批单。"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "clarification_question": "",
+  "reason": "已读取《差旅报销材料清单》原文，明确列出国内差旅报销所需三项材料；本轮仅问材料，未涉及期限等其他事项。",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 3,
+    "tool_calls": 6
+  }
+}

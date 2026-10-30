@@ -1,0 +1,115 @@
+[
+  {
+    "step": 1,
+    "call_id": "mock_1_0",
+    "tool": "search_documents",
+    "arguments": {
+      "query": "国内差旅报销材料",
+      "purpose": "离线脚本：检索"
+    },
+    "result_summary": {
+      "ok": true,
+      "hits": 4,
+      "doc_ids": [
+        "D03",
+        "D07",
+        "D09",
+        "D01"
+      ]
+    },
+    "next_model_step": 2,
+    "observation_delivered_to_next_model": true,
+    "next_actions": [
+      {
+        "call_id": "mock_2_0",
+        "name": "read_document",
+        "arguments": {
+          "doc_id": "D03",
+          "purpose": "离线脚本：读取原文"
+        },
+        "public_basis": "离线脚本：读取原文"
+      }
+    ],
+    "termination": null
+  },
+  {
+    "step": 2,
+    "call_id": "mock_2_0",
+    "tool": "read_document",
+    "arguments": {
+      "doc_id": "D03",
+      "purpose": "离线脚本：读取原文"
+    },
+    "result_summary": {
+      "ok": true,
+      "doc_id": "D03",
+      "chunk_ids": [
+        "C1",
+        "C2"
+      ]
+    },
+    "next_model_step": 3,
+    "observation_delivered_to_next_model": true,
+    "next_actions": [
+      {
+        "call_id": "mock_3_0",
+        "name": "finish_answer",
+        "arguments": {
+          "status": "answered",
+          "answer": "国内差旅报销需要提供合规发票、行程单和出差审批单。 材料清单不规定报销提交期限；期限适用制度存在歧义时应向财务确认。",
+          "citations": [
+            {
+              "doc_id": "D03",
+              "chunk_id": "C1",
+              "quote": "国内差旅报销需要提供合规发票、行程单和出差审批单。"
+            },
+            {
+              "doc_id": "D03",
+              "chunk_id": "C2",
+              "quote": "材料清单不规定报销提交期限；期限适用制度存在歧义时应向财务确认。"
+            }
+          ],
+          "conflicts": [],
+          "gaps": [],
+          "clarification_question": "",
+          "reason": "离线脚本结束"
+        },
+        "public_basis": "离线脚本结束"
+      }
+    ],
+    "termination": null
+  },
+  {
+    "step": 3,
+    "call_id": "mock_3_0",
+    "tool": "finish_answer",
+    "arguments": {
+      "status": "answered",
+      "answer": "国内差旅报销需要提供合规发票、行程单和出差审批单。 材料清单不规定报销提交期限；期限适用制度存在歧义时应向财务确认。",
+      "citations": [
+        {
+          "doc_id": "D03",
+          "chunk_id": "C1",
+          "quote": "国内差旅报销需要提供合规发票、行程单和出差审批单。"
+        },
+        {
+          "doc_id": "D03",
+          "chunk_id": "C2",
+          "quote": "材料清单不规定报销提交期限；期限适用制度存在歧义时应向财务确认。"
+        }
+      ],
+      "conflicts": [],
+      "gaps": [],
+      "clarification_question": "",
+      "reason": "离线脚本结束"
+    },
+    "result_summary": {
+      "ok": true,
+      "accepted": true
+    },
+    "next_model_step": null,
+    "observation_delivered_to_next_model": false,
+    "next_actions": [],
+    "termination": "model_finished"
+  }
+]

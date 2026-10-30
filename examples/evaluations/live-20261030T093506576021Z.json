@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-10-30T09:35:06.576021+00:00",
+  "mode": "live",
+  "engine": "langgraph",
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "results": [
+    {
+      "case": "normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-normal-20261030T093402356783Z-ff1ac1"
+    },
+    {
+      "case": "conflict",
+      "status": "needs_clarification",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-conflict-20261030T093409315561Z-b35108"
+    },
+    {
+      "case": "outside",
+      "status": "insufficient_evidence",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-outside-20261030T093413631133Z-6340cf"
+    },
+    {
+      "case": "paraphrase",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-paraphrase-20261030T093417529711Z-d2e624"
+    },
+    {
+      "case": "context",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 6
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-context-20261030T093421754060Z-dd194e"
+    },
+    {
+      "case": "transient_failure",
+      "status": "answered",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 7
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-transient_failure-20261030T093428549576Z-df6454"
+    },
+    {
+      "case": "persistent_failure",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 6,
+        "tool_calls": 6
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-persistent_failure-20261030T093435216385Z-16b893"
+    },
+    {
+      "case": "step_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 2
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-step_limit-20261030T093437364424Z-e500ad"
+    },
+    {
+      "case": "changed_content",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-changed_content-20261030T093441804111Z-7f47a6"
+    },
+    {
+      "case": "single_policy",
+      "status": "answered",
+      "counts": {
+        "model_calls": 5,
+        "tool_calls": 9
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-single_policy-20261030T093451105427Z-182a15"
+    },
+    {
+      "case": "explicit_supersession",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-explicit_supersession-20261030T093456077058Z-6c22f8"
+    },
+    {
+      "case": "document_injection",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-document_injection-20261030T093459497024Z-dc18da"
+    },
+    {
+      "case": "materials_normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 6
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-materials_normal-20261030T093504818582Z-4334d4"
+    },
+    {
+      "case": "tool_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 1
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/live-tool_limit-20261030T093506451839Z-c67576"
+    }
+  ],
+  "semantic_review": "Not performed automatically"
+}

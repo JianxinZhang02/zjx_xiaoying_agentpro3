@@ -1,0 +1,25 @@
+[
+  {
+    "step": 1,
+    "call_id": "mock_1_0",
+    "tool": "search_documents",
+    "arguments": {
+      "query": "年假申请",
+      "purpose": "离线脚本：检索"
+    },
+    "result_summary": {
+      "ok": true,
+      "hits": 4,
+      "doc_ids": [
+        "D04",
+        "D08",
+        "D02",
+        "D01"
+      ]
+    },
+    "next_model_step": null,
+    "observation_delivered_to_next_model": false,
+    "next_actions": [],
+    "termination": "tool_call_limit"
+  }
+]

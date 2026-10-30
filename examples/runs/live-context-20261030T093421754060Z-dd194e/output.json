@@ -1,0 +1,20 @@
+{
+  "status": "answered",
+  "answer": "国内差旅报销需要提供：合规发票、行程单和出差审批单。",
+  "citations": [
+    {
+      "doc_id": "D03",
+      "chunk_id": "C1",
+      "quote": "国内差旅报销需要提供合规发票、行程单和出差审批单。"
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "clarification_question": "",
+  "reason": "已读取《差旅报销材料清单》原文，材料要求明确；报销期限冲突与本轮所问材料无关，未纳入。",
+  "termination_reason": "model_finished",
+  "counts": {
+    "model_calls": 3,
+    "tool_calls": 6
+  }
+}

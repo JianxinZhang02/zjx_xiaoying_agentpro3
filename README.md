@@ -1,91 +1,83 @@
-# 企业知识问答 Agent · 校招选题 3
+# 企业知识问答 Agent · 选题 3 · LangGraph 版
 
-面向员工的合成制度问答 CLI。模型自主选择检索、读取、补查或结束；程序负责工具执行、原文引用校验、调用上限及 Trace。
+当前版本 **0.2.0**：由 **LangGraph 1.2.18 StateGraph** 实际编排模型决策、工具执行、观察回传、引用校验和终止；模型使用百炼 `deepseek-v4.1-flash-1017`。
 
-**评审入口：**[需求](docs/01-requirements.md) · [动态决策设计](docs/02-solution.md) · [实际评估与证据](docs/03-evaluation.md) · [AI 使用](docs/04-ai-usage.md) · [复盘](docs/05-retrospective.md)。
+评审先看：[ReAct 真实决策证据](examples/langgraph-react-proof.md) · [全部验收与实际记录](docs/03-evaluation.md) · [完整讲解](docs/06-project-walkthrough.md) · [投递补充说明](SUBMISSION.md)。
 
-**项目讲解与投递：**[选题思路、执行流程、技术和案例详解](docs/06-project-walkthrough.md) · [投递页补充说明与材料索引](SUBMISSION.md)。
+## 环境与安装
 
-## 安装
-
-要求 Python 3.9+、Git；开发环境为 Windows / Python 3.9.13。运行和测试均只用标准库，可编辑安装使用 setuptools 构建后端。
+要求 **Python 3.10+**，本次实测 **Python 3.12.13**。原版 Python 3.9 环境不能运行当前版。推荐用 uv 创建独立环境，避免修改系统 Python：
 
 ```powershell
 git clone https://github.com/JianxinZhang02/zjx_xiaoying_agentpro3.git
 cd zjx_xiaoying_agentpro3
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -e .
+uv python install 3.12
+uv sync --frozen --python 3.12
 ```
 
-以下命令中的 `python` 可替换为 `.\.venv\Scripts\python.exe`。macOS/Linux 对应解释器为 `.venv/bin/python`。
-请在仓库目录运行；资料与验收输入位于仓库，不提供脱离仓库的独立 wheel 数据包。
+`uv.lock` 锁定依赖；`pyproject.toml` 固定 LangGraph 1.2.18。无 uv 时，可在已安装的 Python 3.10+ 下新建 venv，再 `python -m pip install -e .`。
+以下命令均在仓库目录执行。也可用 `.venv/Scripts/python.exe` 替代 `uv run --frozen python`。
 
-## 无密钥离线运行
+## 离线运行与测试
 
 ```powershell
-python -m knowledge_agent run-case --case normal --mode mock
-python -m knowledge_agent evaluate --mode mock
-python -m unittest discover -s tests -v
+uv run --frozen python -m unittest discover -s tests -v
+uv run --frozen python -m knowledge_agent run-case --case normal --mode mock
+uv run --frozen python -m knowledge_agent evaluate --mode mock
 ```
 
-Mock 是显式脚本化模型，标识为 `SCRIPTED-OFFLINE-NOT-AN-LLM`。它只验证执行机制，不证明真实模型决策效果。
-任意 `ask --mode mock` 不生成自由问答，只演示资料不足路径；离线验收应使用 `run-case` / `evaluate`。
+Mock 为明确标记的 `SCRIPTED-OFFLINE-NOT-AN-LLM`，只验证图执行与保护机制，不证明模型决策效果。任意 `ask --mode mock` 仅演示资料不足路径，自由问答请用 live。
 
-## 真实模型运行
+## 真实模型
 
-使用阿里百炼兼容 Chat Completions 接口。`.env.example` 仅是模板，程序不会自动读取 `.env`；在当前 PowerShell 设置变量：
+`.env.example` 只是模板，不自动加载。在当前 PowerShell 配置：
 
 ```powershell
-$env:DASHSCOPE_API_KEY = "替换为本机密钥，不要提交"
+$env:DASHSCOPE_API_KEY = "替换为你的本机密钥"
 $env:DASHSCOPE_BASE_URL = "https://ws-5u8f5tyzlwat3b13.cn-beijing.maas.aliyuncs.com/compatible-mode/v1"
 $env:DASHSCOPE_MODEL = "deepseek-v4.1-flash-1017"
-
-python scripts/check_model.py
-python -m knowledge_agent ask --question "年假需要提前多久申请，由谁批准？" --mode live
-python -m knowledge_agent run-case --case conflict --mode live
-python -m knowledge_agent evaluate --mode live
+uv run --frozen python -m knowledge_agent ask --question "年假需要提前多久申请，由谁批准？" --mode live
+uv run --frozen python -m knowledge_agent run-case --case conflict --mode live
+uv run --frozen python -m knowledge_agent run-case --case transient_failure --mode live
+uv run --frozen python -m knowledge_agent evaluate --mode live
 ```
 
-使用自己的百炼空间时，同时替换地址与对应密钥。初始 `deepseek-v4-flash` 在本空间返回 404；经用户确认，最终使用 `deepseek-v4.1-flash-1017`。不会暗中切换模型或转为 Mock。
+使用自己的百炼空间时同时替换地址与对应密钥。不会自动换模型、降级成 Mock 或自动重试业务工具。
+`--history examples/cases/history.json` 提供历史；`--data` 更换 JSON；`--out-dir` 指定证据目录；`evaluate --cases normal,conflict` 运行选定场景。
+`ask` 支持 `--max-model-calls` 和 `--max-tool-calls`。
 
-```powershell
-python -m knowledge_agent evaluate --mode live --cases normal,conflict,context,transient_failure
-python -m knowledge_agent run-case --case persistent_failure --mode live
-python -m knowledge_agent ask --question "那需要哪些材料？" --history examples/cases/history.json --mode live
+## 图与决策边界
+
+```text
+START → decide（真实模型选择动作）
+          ├→ execute_tools → observe → decide
+          ├→ validate → observe → finalize → END
+          └→ stop → END
 ```
 
-历史是 user/assistant 文本消息数组，只用于解析主题，不作为制度证据。
-`--data` 替换 JSON 资料，`--out-dir` 指定运行目录；`ask` 还支持 `--max-model-calls`、`--max-tool-calls`。
-默认上限为 8 次模型请求、10 次工具调用、单次请求超时 60 秒。重试与格式修正均计入额度，同轮多个工具逐个执行计数。
+校验失败也经 observe 回到 decide。图状态保存消息、成功证据、失败配置、观察、计数和事件；不是在一个图节点中包住旧 while 循环。
+条件边分发模型选定的动作、处理限额，不按问题关键词决定查哪篇制度。完整编译图见 [langgraph.mmd](docs/langgraph.mmd)。
 
-## 输出与证据
+默认最多 **8 次模型请求、10 次工具调用、单次模型超时 60 秒**。结束动作和错误修正均计数；框架递归保护也会返回明确 incomplete。
+状态为 answered / needs_clarification / insufficient_evidence / incomplete。
 
-结果包含 `status`、`answer`、`citations`（文档/片段 ID、原文）、`conflicts`、`gaps`、`clarification_question`、`reason`、`termination_reason` 和调用计数。
+## 输出、证据与复核
 
-| 状态 | 含义 |
-|---|---|
-| answered | 证据充分，已回答 |
-| needs_clarification | 适用范围或冲突需要确认 |
-| insufficient_evidence | 资料未覆盖问题 |
-| incomplete | 工具、模型或执行上限导致未完成 |
+输出包含回答、原文引用、冲突、缺口、澄清问题、任务状态和终止原因。`ask` 成功回答退出 0，其他任务状态退出 2；验收命令按预期是否通过退出 0/1。
+每个新运行保存输入、数据快照、实际输出、Manifest、JSONL/Markdown Trace，并增加：
 
-`ask` 回答成功返回 0，其他任务状态返回 2；`run-case` / `evaluate` 按验收是否通过返回 0/1（持续故障正确返回 incomplete 也可通过该项）；无效输入返回 2。
+- `decision-links.json`：每次工具观察 → 下一轮实际模型动作、参数和公开依据；同轮动作不冒充反馈决策。
+- `graph-state.json`：实际最终图状态。
+- `checkpoints.json`：运行期间真实内存检查点摘要。
+- `graph.mmd`：实际编译图。
 
-每次运行保存 `input.json`、数据快照、结构化输出、Manifest、JSONL Trace 和由同一事件生成的 Markdown Trace。验收另有 `assessment.json`，汇总见 `examples/evaluations/`。
-Manifest 记录源码提交及哈希、资料/提示词哈希、模式与模型。历史失败保留，最终评估文档明确链接交付使用的运行。
+Manifest 标注 LangGraph 版本、Python、源码提交/哈希及依赖锁哈希。可用 `scripts/verify_react.py --summary <真实汇总路径>` 核对动作来源与观察关联。
 
-## 工程边界
+## 当前验证与限制
 
-- 10 篇合成制度，中文双字词元与英文词元 BM25；默认检索前 4 项，模型可以调整。
-- 最终引用必须匹配本次成功读取的原文，搜索片段不能替代读取。
-- 引用真实性与状态结构可自动校验，语义是否完全支持回答仍需复核；不虚报候选人已完成人工复核。
-- 日期较新不自动优先，明确替代关系可以用于判断。资料外问题不接外部搜索。
-- 有单项文档指令注入测试，不宣称生产级安全隔离。
-- 无第三方 Agent 框架。项目版本 0.1.0；无第三方运行/测试依赖。
+当前图版本 **44 个自动测试、14/14 Mock、14/14 最终完整 live 场景通过**。首轮图版本为 12/14（一次超时、一次额外旁支内容），失败与修正均保留；以 [评估文档](docs/03-evaluation.md) 的链接为当前证据。
+十篇制度均为合成数据；BM25 为词面检索。引用逐字匹配不等于语义正确性证明。语义复核由 AI 执行，未虚报候选人独立人工复核。
+InMemorySaver 用于本次运行状态检查，不是跨进程持久化；未实现用户确认后恢复任务、生产部署或长期会话。
 
-## Git 与提交
-
-[实际开发记录](docs/work-log.md)记录时间、失败和修正；[首轮真实评估复核](examples/first-live-review.md)保留改进依据。
-`.env`、虚拟环境、`.local/` 不提交。`python scripts/audit_secrets.py` 检查非忽略文件中的密钥形态字符串。
-
-交付题号 **3**，GitHub URL 为本仓库。最终 SHA 在所有材料提交、推送后用 `git rev-parse HEAD` 获取，并与 `git ls-remote origin refs/heads/main` 核对。提交内部不嵌入其自身尚未生成的 SHA。
+五份要求文档在 docs/01～05；AI 使用及实际贡献见 [04-ai-usage](docs/04-ai-usage.md)，实际用时和 Git 过程见 [work-log](docs/work-log.md)。历史 0.1 原生版记录保留，但不作为当前图版本的新验收结果。
+`.env`、虚拟环境和 `.local/` 均忽略，`scripts/audit_secrets.py` 检查非忽略文件。提交题号 **3**；最终 SHA 在所有材料推送后获取并核对远程。

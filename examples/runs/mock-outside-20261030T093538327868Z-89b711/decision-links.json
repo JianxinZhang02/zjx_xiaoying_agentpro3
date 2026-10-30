@@ -1,0 +1,89 @@
+[
+  {
+    "step": 1,
+    "call_id": "mock_1_0",
+    "tool": "search_documents",
+    "arguments": {
+      "query": "火星地下海洋含盐量",
+      "purpose": "离线脚本：检索"
+    },
+    "result_summary": {
+      "ok": true,
+      "hits": 0,
+      "doc_ids": []
+    },
+    "next_model_step": 2,
+    "observation_delivered_to_next_model": true,
+    "next_actions": [
+      {
+        "call_id": "mock_2_0",
+        "name": "search_documents",
+        "arguments": {
+          "query": "火星盐度",
+          "purpose": "离线脚本：改写查询"
+        },
+        "public_basis": "离线脚本：改写查询"
+      }
+    ],
+    "termination": null
+  },
+  {
+    "step": 2,
+    "call_id": "mock_2_0",
+    "tool": "search_documents",
+    "arguments": {
+      "query": "火星盐度",
+      "purpose": "离线脚本：改写查询"
+    },
+    "result_summary": {
+      "ok": true,
+      "hits": 0,
+      "doc_ids": []
+    },
+    "next_model_step": 3,
+    "observation_delivered_to_next_model": true,
+    "next_actions": [
+      {
+        "call_id": "mock_3_0",
+        "name": "finish_answer",
+        "arguments": {
+          "status": "insufficient_evidence",
+          "answer": "当前企业制度不包含该问题的可靠答案。",
+          "citations": [],
+          "conflicts": [],
+          "gaps": [
+            "缺少相关资料"
+          ],
+          "clarification_question": "",
+          "reason": "离线脚本结束"
+        },
+        "public_basis": "离线脚本结束"
+      }
+    ],
+    "termination": null
+  },
+  {
+    "step": 3,
+    "call_id": "mock_3_0",
+    "tool": "finish_answer",
+    "arguments": {
+      "status": "insufficient_evidence",
+      "answer": "当前企业制度不包含该问题的可靠答案。",
+      "citations": [],
+      "conflicts": [],
+      "gaps": [
+        "缺少相关资料"
+      ],
+      "clarification_question": "",
+      "reason": "离线脚本结束"
+    },
+    "result_summary": {
+      "ok": true,
+      "accepted": true
+    },
+    "next_model_step": null,
+    "observation_delivered_to_next_model": false,
+    "next_actions": [],
+    "termination": "model_finished"
+  }
+]

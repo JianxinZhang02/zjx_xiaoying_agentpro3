@@ -1,0 +1,7 @@
+{
+  "verified_runs": 14,
+  "engine": "langgraph",
+  "mode": "live",
+  "passed": true,
+  "boundary": "Artifact/protocol consistency audit, not proof of every semantic judgment."
+}

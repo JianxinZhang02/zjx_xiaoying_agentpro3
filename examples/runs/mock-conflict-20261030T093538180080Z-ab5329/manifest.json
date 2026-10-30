@@ -1,0 +1,31 @@
+{
+  "run_id": "mock-conflict-20261030T093538180080Z-ab5329",
+  "timestamp": "2026-10-30T09:35:38.181080+00:00",
+  "display_timezone": "Asia/Shanghai",
+  "mode": "mock",
+  "requested_model": "SCRIPTED-OFFLINE-NOT-AN-LLM",
+  "engine": "langgraph",
+  "framework": {
+    "name": "langgraph",
+    "version": "1.2.18",
+    "features": [
+      "StateGraph",
+      "conditional_edges",
+      "InMemorySaver"
+    ]
+  },
+  "python_version": "3.12.13",
+  "dependency_lock_sha256": "4865b6030cb73990d04c6dd87242304ae7a74eb9c1e042c50dad5054601c787c",
+  "graph_recursion_limit": 118,
+  "graph_steps": 16,
+  "limits": {
+    "model_calls": 8,
+    "tool_calls": 10
+  },
+  "data_sha256": "a75e091fc6d4d57ddd56febcd895eaad28f962426700e9a2a89ce60b53f63639",
+  "prompt_sha256": "810c633cda71f931f4718fecc9ae1c3d2cdc6c36dab9fa6da9ed618102180e3c",
+  "git_commit": "9c289aba6765f6c095b1b9a3b7f2f5734a214a73",
+  "source_dirty": false,
+  "source_sha256": "af6ca468d6fd752fb39c7104273e55be2c505c3e4d5a73d0c19ace6a9143c731",
+  "mock_boundary": "Scripted model validates execution only, not real model decisions"
+}

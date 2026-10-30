@@ -1,55 +1,51 @@
-# 方案、动态决策与工程取舍
+# LangGraph 方案、动态决策与取舍
 
-## 调用链路
+当前 0.2.0 使用 LangGraph 1.2.18，实测 Python 3.12.13，要求 Python >=3.10。固定版本见 pyproject.toml，传递依赖见 uv.lock。
 
-```mermaid
-flowchart TD
-    U[问题与可选历史] --> M[模型选择动作]
-    M --> S[search_documents]
-    M --> R[read_document]
-    S --> O[实际结果或工具错误]
-    R --> O
-    O --> M
-    M --> F[finish_answer]
-    F --> V{结构与原文校验}
-    V -->|不通过且有额度| M
-    V -->|通过| E[结果与 Trace]
-    M -->|执行上限或模型错误| I[incomplete 与已有证据]
-```
+## 框架职责
 
-程序不按问题关键词或用例编号路由动作。模型生成原生 tool_calls；程序执行并用对应 tool_call_id 回传实际结果。
-真实模型不接收验收答案、预期状态、read_docs 或离线脚本。故障配置只由工具层读取，模型通过错误结果观察故障。
+`StateGraph(AgentState)` 定义六个节点，编译后由 graph.invoke 执行。START、END 与条件边负责运行编排；InMemorySaver 保存运行内检查点，方便核查实际状态。
+不使用框架的自动重试策略，也不把原生 while 包进单个节点。工具失败必须先回传给模型，模型再发起新的动作。
 
-## 接口
+| 节点 | 职责 |
+|---|---|
+| decide | 检查模型额度，调用真实模型，保存实际 tool_calls 与已观察的调用 ID |
+| execute_tools | 执行模型选定的业务工具，计数，保留成功证据和错误 |
+| observe | 将实际结果追加为 tool 消息，供下一轮模型观察 |
+| validate | 验证模型提出的 finish_answer，错误也回传模型 |
+| finalize | 结构校验通过后输出模型结果 |
+| stop | 额度、模型异常或框架递归保护时明确 incomplete |
 
-| 接口 | 输入 | 输出与职责 |
-|---|---|---|
-| search_documents | query、可选 top_k、purpose | 文档、日期、适用范围、BM25 分数、发现片段 |
-| read_document | doc_id、可选 chunk_id、purpose | 原文及元数据，登记本次成功读取的证据 |
-| finish_answer | 状态、回答、引用、冲突、缺口、澄清问题、终止依据 | 校验通过后结束，错误反馈模型修正 |
+实际编译拓扑见 [langgraph.mmd](langgraph.mmd)，真实节点路径在每次 Trace 中。条件边只判断动作类型、校验结果和限额；是否补查、查什么、是否请求确认，由模型产生。
 
-purpose/reason 是简短公开说明，不是内部思维过程。关闭思考模式，不持久化 reasoning_content。
-结束动作必须单独调用，不能在尚未观察读取结果时一并宣称完成。同轮多个业务工具逐个执行计数。
+## 图状态
 
-## 证据与决策
+AgentState 包含 messages、pending_calls、pending_results、evidence、failures、observations、events、model_calls、tool_calls、graph_steps、stop_reason 和 output。
+节点返回更新状态；业务工具从状态恢复本次已成功读取的证据，失败不会清空成果。Agent 实例只运行一次，防止新任务默默复用旧证据。
+checkpoint 中没有模型密钥。InMemorySaver 不跨进程保存；graph-state.json 是审查快照，没有实现从它恢复任务。
 
-成功读取后以 `(doc_id, chunk_id)` 登记原文。引用必须来自本次登记，并逐字匹配原文子串。
-answered 必须有引用且无未解决冲突、缺口或澄清问题；冲突至少引用两篇资料。结构校验不能证明所有语义主张得到支持，也不能穷尽潜在冲突。
+## 模型与工具
 
-先解析本轮事项：材料问题不因无关期限冲突失败；期限问题遇到 D01/D02 不能擅自选择。日期用于展示与查证，不能自动裁决；D06 明确替代 D05，则有依据使用现行规则。
-搜索无结果时模型可改写；原文持续读取失败时不将搜索片段当正式答案。文档和历史是数据，不能改写系统规则。
+模型为百炼 deepseek-v4.1-flash-1017，通过标准库 urllib 调用兼容 Chat Completions 接口；关闭思考模式，非流式，无传输层自动重试。
+工具为 search_documents(query, top_k, purpose)、read_document(doc_id, chunk_id, purpose)、finish_answer（状态、回答、引用、冲突、缺口、澄清问题、公开结束依据）。
+一轮可选择多个业务工具，程序串行执行，全部观察回传后才请求下一轮模型。同轮中第二个工具不能被说成观察第一个结果后的调整。
+结束动作必须单独调用并经过 validate；仅输出“完成了”的普通文本不能结束。
 
-## 运行边界与取舍
+## 检索与证据
 
-默认 8 次模型请求、10 次工具调用，网络超时 60 秒，无传输层自动重试。错误修正与显式重试均消耗额度。
-达到上限输出 incomplete 和已有成功证据。HTTP、超时、鉴权和非法响应明确失败，不自动切换服务或 Mock。
-CLI 每次任务新建工具状态，不跨任务复用引用；历史只接受 user/assistant 文本，不能传 system/tool。
+十篇本地合成制度，中文双字词元/英文词元 BM25，默认 top_k=4，可由模型调至 1～10。标题和正文参与索引，日期/范围用于模型查证。
+成功读取的原文登记在图状态。引用必须匹配本次读取的 doc_id/chunk_id 与原文子串。answered 需要引用且不得有未解决缺口；冲突至少引用两篇文档。
+日期较新不代表优先；明确替代条款才可消解。程序不自动发现所有语义冲突，也不证明引用支持每句推理。
 
-Python 3.9.13 实测，只用 urllib、json、dataclasses、unittest 等标准库；setuptools>=61 仅承担构建，没有 Agent 框架。
-BM25 对小型制度可解释、可离线复现，无需分词模型；不宣称适合大规模语义检索。非流式调用减少工具参数片段拼接问题，原生循环便于展示状态和错误。
+## 限额和 Trace
 
-## Trace
+默认 8 次模型调用、10 次工具调用、网络超时 60 秒；结束动作、错误修正和模型决定的重试均计数。GraphRecursionError 也显式转换 incomplete，保留检查点中的成功证据。
+JSONL 记录实际模型输出、工具执行及 observation_delivered；model_response 记录其实际收到的工具调用 ID。
+decision-links 从这些实际事件生成下一动作、参数和公开 purpose/reason，不生成内部思维。图状态、内存检查点摘要和编译图一并输出。
 
-JSONL 为事件序列；Markdown 从同一序列生成参数、实际结果、公开目的及下一动作。每次运行独立 ID，不覆盖旧结果。
-Manifest 保存源码提交与哈希、数据/提示词哈希；每次数据快照可重建变更场景。修改源码后重新验证相关场景。
-目录名时间戳为 UTC；开发日志统一使用 Asia/Shanghai。
+## 原生版与新验收
+
+原生版留在 Git 历史和旧 examples 中。用户要求迁移后，0.2 重新运行全部真实场景；不借用旧版结果冒充新框架验证。
+框架作用是管理状态与执行，满足 ReAct 仍需看真实模型的动作和观察。核验入口见 [实际决策证据](../examples/langgraph-react-proof.md)。
+
+官方参考：[Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)、[Persistence](https://docs.langchain.com/oss/python/langgraph/persistence)。

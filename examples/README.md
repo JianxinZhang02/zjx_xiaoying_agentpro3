@@ -1,9 +1,10 @@
-# 运行证据导航
+# 当前证据入口
 
-- [最终矩阵及全部实际输入、输出、Trace](../docs/03-evaluation.md)
-- [最终证据复核（AI 执行）](final-live-review.md)
-- [首轮失败与修正依据](first-live-review.md)
-- [自动测试原始输出](test-results.txt)
+- [LangGraph ReAct 实际路径与同问题对照](langgraph-react-proof.md)
+- [当前全部验收与输入/输出/Trace](../docs/03-evaluation.md)
+- [实际决策链审计](langgraph-react-audit.json)
+- [LangGraph 测试输出](test-results-langgraph.txt)
+- [当前独立克隆验证](clean-checkout-langgraph.txt)
 
-`runs/` 保留开发阶段和最终阶段记录，以评估文档链接为最终验收入口。`mock-*` 为显式离线脚本，`live-*` 为真实模型请求。
-每个运行包含原始输入、实际输出、数据快照、JSONL/Markdown Trace 和来源哈希；失败不覆盖。
+每组新增 decision-links、graph-state、checkpoints 和编译图。manifest.engine=langgraph 标明图版本；无该字段的旧记录为原生版历史。
+Mock 明确为脚本，不能证明模型决策。首轮图版失败和旧原生版失败均保留，不覆盖为最终成功。

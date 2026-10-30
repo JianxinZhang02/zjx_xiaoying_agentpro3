@@ -1,0 +1,7 @@
+{
+  "id": "persistent_failure",
+  "question": "年假需要提前多久申请？",
+  "failures": {
+    "read_document": "always"
+  }
+}

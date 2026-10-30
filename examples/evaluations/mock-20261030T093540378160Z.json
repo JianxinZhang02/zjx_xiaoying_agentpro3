@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-10-30T09:35:40.377632+00:00",
+  "mode": "mock",
+  "engine": "langgraph",
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "results": [
+    {
+      "case": "normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-normal-20261030T093537953975Z-221e33"
+    },
+    {
+      "case": "conflict",
+      "status": "needs_clarification",
+      "counts": {
+        "model_calls": 5,
+        "tool_calls": 5
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-conflict-20261030T093538180080Z-ab5329"
+    },
+    {
+      "case": "outside",
+      "status": "insufficient_evidence",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-outside-20261030T093538327868Z-89b711"
+    },
+    {
+      "case": "paraphrase",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-paraphrase-20261030T093538477407Z-8d3e06"
+    },
+    {
+      "case": "context",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-context-20261030T093538628764Z-2c3ff6"
+    },
+    {
+      "case": "transient_failure",
+      "status": "answered",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-transient_failure-20261030T093538806421Z-a784ce"
+    },
+    {
+      "case": "persistent_failure",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-persistent_failure-20261030T093538951366Z-d2d818"
+    },
+    {
+      "case": "step_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 1
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-step_limit-20261030T093539131755Z-dac79c"
+    },
+    {
+      "case": "changed_content",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-changed_content-20261030T093539283990Z-c256e5"
+    },
+    {
+      "case": "single_policy",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-single_policy-20261030T093539490046Z-9d43b6"
+    },
+    {
+      "case": "explicit_supersession",
+      "status": "answered",
+      "counts": {
+        "model_calls": 4,
+        "tool_calls": 4
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-explicit_supersession-20261030T093539656347Z-641ee9"
+    },
+    {
+      "case": "document_injection",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-document_injection-20261030T093539881852Z-006bae"
+    },
+    {
+      "case": "materials_normal",
+      "status": "answered",
+      "counts": {
+        "model_calls": 3,
+        "tool_calls": 3
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-materials_normal-20261030T093540054339Z-8aa118"
+    },
+    {
+      "case": "tool_limit",
+      "status": "incomplete",
+      "counts": {
+        "model_calls": 1,
+        "tool_calls": 1
+      },
+      "passed": true,
+      "failures": [],
+      "run_dir": "examples/runs/mock-tool_limit-20261030T093540233597Z-da3cb4"
+    }
+  ],
+  "semantic_review": "Not performed automatically"
+}

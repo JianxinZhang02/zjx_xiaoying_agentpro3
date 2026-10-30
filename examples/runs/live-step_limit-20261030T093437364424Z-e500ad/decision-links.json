@@ -1,0 +1,51 @@
+[
+  {
+    "step": 1,
+    "call_id": "call_200d80dd8a9f4019a2b38540",
+    "tool": "search_documents",
+    "arguments": {
+      "query": "年假申请规则",
+      "purpose": "查找年假申请相关制度",
+      "top_k": 10
+    },
+    "result_summary": {
+      "ok": true,
+      "hits": 7,
+      "doc_ids": [
+        "D04",
+        "D05",
+        "D06",
+        "D08",
+        "D10",
+        "D02",
+        "D01"
+      ]
+    },
+    "next_model_step": null,
+    "observation_delivered_to_next_model": false,
+    "next_actions": [],
+    "termination": "model_call_limit"
+  },
+  {
+    "step": 1,
+    "call_id": "call_8c3fe13800ca44518389fec6",
+    "tool": "search_documents",
+    "arguments": {
+      "query": "年休假 请假流程 审批",
+      "purpose": "补充检索年休假审批流程制度",
+      "top_k": 10
+    },
+    "result_summary": {
+      "ok": true,
+      "hits": 2,
+      "doc_ids": [
+        "D07",
+        "D03"
+      ]
+    },
+    "next_model_step": null,
+    "observation_delivered_to_next_model": false,
+    "next_actions": [],
+    "termination": "model_call_limit"
+  }
+]
