@@ -1,3 +1,3 @@
-"""Enterprise knowledge agent. Runtime uses the Python standard library only."""
+"""Evidence-grounded enterprise knowledge agent orchestrated by LangGraph."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

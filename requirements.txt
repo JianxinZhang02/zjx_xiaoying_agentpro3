@@ -1,2 +1,3 @@
-# No third-party runtime or test dependencies. Install the project: python -m pip install -e .
-# setuptools>=61 is used only as the build backend (see pyproject.toml).
+# Runtime dependency and exact LangGraph version are defined in pyproject.toml.
+# uv.lock pins the transitive dependency resolution; use uv sync --frozen to reproduce it.
+-e .

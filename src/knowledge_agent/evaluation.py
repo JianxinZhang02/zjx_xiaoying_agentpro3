@@ -9,7 +9,7 @@ from .mock import mock_for_case
 from .model import LiveModel
 from .retrieval import DEFAULT_DATA, KnowledgeBase
 from .tools import ToolRuntime
-from .trace import ROOT, json_text, save_run, write_text
+from .trace import ROOT, decision_links, json_text, save_run, write_text
 
 
 CASES_PATH = ROOT / "examples" / "cases" / "acceptance.json"
@@ -65,6 +65,10 @@ def check_case(case, output, events):
             failures.append("no_injected_failure_observed")
         elif not any(e["event"] == "model_response" for e in events[failed + 1:]):
             failures.append("no_model_action_after_failure")
+        else:
+            link = next((link for link in decision_links(events) if link["call_id"] == events[failed]["call_id"]), None)
+            if not link or not link["observation_delivered_to_next_model"] or not link["next_actions"]:
+                failures.append("failure_not_linked_to_new_model_decision")
     if expect.get("termination") and output.get("termination_reason") != expect["termination"]:
         failures.append("unexpected_termination")
     return {"passed": not failures, "failures": failures,
@@ -96,7 +100,7 @@ def evaluate(mode="mock", selected=None, out_root=None, data_path=DEFAULT_DATA):
         row = run_case(case, mode, out_root, data_path)
         rows.append(row)
         print(json.dumps(row, ensure_ascii=False), flush=True)
-    summary = {"timestamp": datetime.now(timezone.utc).isoformat(), "mode": mode, "total": len(rows),
+    summary = {"timestamp": datetime.now(timezone.utc).isoformat(), "mode": mode, "engine": "langgraph", "total": len(rows),
                "passed": sum(row["passed"] for row in rows), "failed": sum(not row["passed"] for row in rows),
                "results": rows, "semantic_review": "Not performed automatically"}
     root = ROOT / "examples" / "evaluations"
